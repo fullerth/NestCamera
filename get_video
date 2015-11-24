@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]
+then
+    echo "Please enter a filename"
+    exit
+fi
+
+height=730
+width=1296
+fps=49
+rec_time=5000
+filename="$1".h264
+
+
+
+ssh pi@raspberrypi raspivid -w $width -h $height -fps $fps -t $rec_time -o $filename 
+scp pi@raspberrypi:~/$filename videos/$filename
