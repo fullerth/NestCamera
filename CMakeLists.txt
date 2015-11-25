@@ -10,10 +10,13 @@ add_subdirectory(test/testfoo)
 add_test(NAME AllTestsInFoo COMMAND testfoo)
 add_subdirectory(libfoo)
 
+add_subdirectory(raspiCamera)
+
 add_subdirectory(lib/gtest)
 
 include_directories(
     "lib/gmock/include"
+    "raspiCamera/include"
 )
 
 set(MAIN_SOURCES
