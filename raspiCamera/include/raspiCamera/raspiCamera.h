@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include <iostream>
 #include <string>
+#include <signal.h>
+#include <boost/tokenizer.hpp>
 
 class IRaspiCamera
 {
@@ -19,7 +21,7 @@ class RaspiCamera : public IRaspiCamera
         void startVideo(std::string filename, std::string options);
         void stopVideo();
     private:
-        pid_t* m_pid;
+        pid_t m_pid;
 };
 
 #endif //__raspiCamera_h__

@@ -2,10 +2,12 @@
 cmake_minimum_required(VERSION 2.8.7)
 project(NestCamera)
 
+## Project Configuration
+set(CMAKE_BUILD_TYPE Debug)
+add_definitions(-std=c++11)
 include(CTest)
 
-set(CMAKE_BUILD_TYPE Debug)
-
+## Directories to add to build
 add_subdirectory(main)
 
 add_subdirectory(test/testfoo)
@@ -21,6 +23,7 @@ include_directories(
     "raspiCamera/include"
 )
 
+## Executables
 set(MAIN_SOURCES
     main/main.cxx)
 
@@ -28,6 +31,7 @@ add_executable(NestCamera
     ${MAIN_SOURCES}
 	       )
 
+## Libraries
 target_link_libraries(NestCamera
     raspiCamera)
 
