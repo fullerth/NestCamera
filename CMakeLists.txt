@@ -4,6 +4,8 @@ project(NestCamera)
 
 include(CTest)
 
+set(CMAKE_BUILD_TYPE Debug)
+
 add_subdirectory(main)
 
 add_subdirectory(test/testfoo)
@@ -26,4 +28,6 @@ add_executable(NestCamera
     ${MAIN_SOURCES}
 	       )
 
+target_link_libraries(NestCamera
+    raspiCamera)
 

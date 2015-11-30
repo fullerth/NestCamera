@@ -1,0 +1,18 @@
+#!/bin/bash
+#Build Nest Camera on the Pi device
+# Requires the NestCamera github repo to be cloned to ~/NestCamera
+
+#Get git commit hash
+current_rev=`git rev-parse HEAD`
+
+#Sync git commit hash on raspberry pi
+#Build on raspberry pi
+ssh pi@192.168.1.16 cd NestCamera & git pull
+
+
+
+#cd NestCamera & git checkout $current_rev
+#cd NestCamera & make
+
+
+
