@@ -5,8 +5,8 @@
 int main(int argc, char **argv)
 {
     RaspiCamera r;
-    r.startVideo("foo", "bar");
-    sleep(20);
+    r.startVideo("foo", "");
+    sleep(10);
     r.stopVideo();
     std::cout << "Hello World 2!\n";
     return 0;

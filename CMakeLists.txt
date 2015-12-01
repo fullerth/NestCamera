@@ -3,8 +3,8 @@ cmake_minimum_required(VERSION 2.8.7)
 project(NestCamera)
 
 ## Project Configuration
-set(CMAKE_BUILD_TYPE Debug)
 add_definitions(-std=c++11)
+add_definitions(-gdwarf-3)
 include(CTest)
 
 ## Directories to add to build
