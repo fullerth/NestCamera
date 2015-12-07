@@ -2,6 +2,11 @@
 cmake_minimum_required(VERSION 2.8.7)
 project(NestCamera)
 
+SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} /usr/local/lib/cmake/)
+
+## Libraries
+find_package(raspicam REQUIRED)
+
 ## Project Configuration
 add_definitions(-std=c++11)
 add_definitions(-gdwarf-3)
