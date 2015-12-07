@@ -6,8 +6,10 @@ int main(int argc, char **argv)
 {
     RaspiCamera r;
     r.startVideo("foo", "");
-    sleep(10);
+    std::cout << "Video Recording, press any key to end\n";
+    std::cin.ignore();
+    std::cout << "Video Recording Stopping\n";
     r.stopVideo();
-    std::cout << "Hello World 2!\n";
+    std::cout << "Video Recording Stopped\n";
     return 0;
 }
