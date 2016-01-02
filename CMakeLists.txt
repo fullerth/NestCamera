@@ -19,9 +19,10 @@ add_subdirectory(test/testfoo)
 add_test(NAME AllTestsInFoo COMMAND testfoo)
 add_subdirectory(libfoo)
 
-add_subdirectory(raspiCamera)
+add_subdirectory(test/testcameraFactory)
+add_test(NAME AllTestsInCameraFactory COMMAND testcameraFactory)
 
-add_subdirectory(lib/gtest)
+add_subdirectory(lib/gmock)
 
 include_directories(
     "lib/gmock/include"
@@ -37,6 +38,5 @@ add_executable(NestCamera
 	       )
 
 ## Libraries
-target_link_libraries(NestCamera
-    raspiCamera)
+target_link_libraries(NestCamera ${raspicam_LIBS})
 
