@@ -22,11 +22,15 @@ add_subdirectory(libfoo)
 add_subdirectory(test/testcameraFactory)
 add_test(NAME AllTestsInCameraFactory COMMAND testcameraFactory)
 
+add_subdirectory(test/testcameraAdapter)
+add_test(NAME AllTestsInCameraAdapter COMMAND testcameraAdapter)
+
 add_subdirectory(lib/gmock)
 
 include_directories(
     "lib/gmock/include"
     "raspiCamera/include"
+    "include"
 )
 
 ## Executables
