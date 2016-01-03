@@ -10,9 +10,9 @@ target_link_libraries(testcameraAdapter
 )
 
 include_directories(
-    "../../lib/gtest/include/"
-    "../../lib/gmock/include/"
-    "../../include/"
+    "../../lib/gtest/include"
+    "../../lib/gmock/include"
+    "../../cameraAdapter/include"
 )
 
 install(TARGETS testcameraAdapter DESTINATION bin)

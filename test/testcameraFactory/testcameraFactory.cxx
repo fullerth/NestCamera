@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 #include "cameraFactory/cameraFactory.h"
-#include "nestcamera/cameraAdapter.h"
+#include "cameraAdapter/cameraAdapter.h"
 
 TEST(cameraFactory, hasGetCameraMethod) {
     CameraFactory f = CameraFactory();

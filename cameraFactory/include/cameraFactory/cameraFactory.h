@@ -1,4 +1,4 @@
-#include "nestcamera/cameraAdapter.h"
+#include "cameraAdapter/cameraAdapter.h"
 
 #ifndef __NEST_CAMERA_CAMERA_FACTORY__
 #define __NEST_CAMERA_CAMERA_FACTORY__

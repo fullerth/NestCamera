@@ -31,6 +31,7 @@ include_directories(
     "lib/gmock/include"
     "include"
     "cameraFactory/include"
+    "cameraAdapter/include"
 )
 
 ## Executables
