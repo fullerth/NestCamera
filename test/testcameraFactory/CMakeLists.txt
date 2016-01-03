@@ -11,9 +11,10 @@ target_link_libraries(testcameraFactory
 )
 
 include_directories(
-    "../../lib/gtest/include/"
-    "../../lib/gmock/include/"
-    "../../include/"
+    "../../lib/gtest/include"
+    "../../lib/gmock/include"
+    "../../include"
+    "../../cameraFactory/include"
 )
 
 install(TARGETS testcameraFactory DESTINATION bin)

@@ -29,8 +29,8 @@ add_subdirectory(lib/gmock)
 
 include_directories(
     "lib/gmock/include"
-    "raspiCamera/include"
     "include"
+    "cameraFactory/include"
 )
 
 ## Executables
