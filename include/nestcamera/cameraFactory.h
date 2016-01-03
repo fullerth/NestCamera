@@ -5,8 +5,8 @@
 
 class CameraFactory {
     public:
-        CameraAdapter getCamera() {
-        }
+        CameraAdapter getCamera(); 
+        
 };
 
 #endif //__NEST_CAMERA_CAMERA_FACTORY__

@@ -35,7 +35,9 @@ include_directories(
 
 ## Executables
 set(MAIN_SOURCES
-    main/main.cxx)
+    main/main.cxx
+    cameraFactory/cameraFactory.cxx)
+
 
 add_executable(NestCamera
     ${MAIN_SOURCES}
