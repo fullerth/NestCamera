@@ -15,6 +15,7 @@ include_directories(
     "../../lib/gmock/include"
     "../../cameraFactory/include"
     "../../cameraAdapter/include"
+    "../../videoAdapter/include"
 )
 
 install(TARGETS testcameraFactory DESTINATION bin)

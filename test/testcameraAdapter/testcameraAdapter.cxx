@@ -1,7 +1,11 @@
 #include "cameraAdapter/cameraAdapter.h"
 #include "gtest/gtest.h"
+#include "videoAdapter/videoAdapter.h"
 
-TEST(cameraAdapter, hasCameraObject) {
-    
-    EXPECT_EQ(0, 1) << "Implement the test!";
+TEST(cameraAdapter, hasGetVideoMethod) {
+    CameraAdapter c = CameraAdapter();
+    VideoAdapter v = c.getVideo();
 }
+
+//TODO: 
+//TEST hasConfigureCameraMethod

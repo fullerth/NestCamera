@@ -32,6 +32,7 @@ include_directories(
     "include"
     "cameraFactory/include"
     "cameraAdapter/include"
+    "videoAdapter/include"
 )
 
 ## Executables
