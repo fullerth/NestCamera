@@ -7,3 +7,6 @@ TEST(cameraFactory, hasGetCameraMethod) {
     CameraAdapter c = f.getCamera();
 } 
 
+TEST(mockCameraFactory, exists) {
+    MockCameraFactory m;
+} 

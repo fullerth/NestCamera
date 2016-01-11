@@ -6,7 +6,10 @@
 class CameraFactory {
     public:
         CameraAdapter getCamera(); 
-        
+};
+
+class MockCameraFactory : public CameraFactory {
+
 };
 
 #endif //__NEST_CAMERA_CAMERA_FACTORY__
