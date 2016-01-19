@@ -17,4 +17,5 @@ include_directories(
     "../../videoAdapter/include"
 )
 
-install(TARGETS testcameraAdapter DESTINATION bin)
+install(TARGETS testcameraAdapter 
+    DESTINATION ${HOST_MOUNTPOINT}${PI_TEST_INSTALL_PATH})
