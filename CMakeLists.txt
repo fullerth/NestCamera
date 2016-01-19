@@ -5,6 +5,7 @@ project(NestCamera)
 SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} /usr/local/lib/cmake/)
 
 ## Libraries
+SET(raspicam_DIR install_tools/raspicam-0.1.3/build)
 find_package(raspicam REQUIRED)
 
 ## Project Configuration

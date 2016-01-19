@@ -54,3 +54,4 @@ NestCamera
 videos/
 raspicam-0.1.3/
 raspicam_image.ppm
+build/
