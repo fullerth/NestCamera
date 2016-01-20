@@ -7,7 +7,7 @@ SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} /usr/local/lib/cmake/)
 ## Raspberry Pi Setup
 SET(HOST_MOUNTPOINT /mnt/pisquanch/)
 SET(PI_INSTALL_PATH home/pi/NestCamera/build/)
-SET(PI_TEST_INSTALL_PATH home/pi/NestCamera/test/bin)
+SET(PI_TEST_INSTALL_PATH home/pi/NestCamera/test/bin/)
 
 ## Libraries
 SET(raspicam_DIR install_tools/raspicam-0.1.3/build)
@@ -26,7 +26,8 @@ add_test(NAME AllTestsInFoo COMMAND testfoo)
 add_subdirectory(libfoo)
 
 add_subdirectory(test/testcameraFactory)
-add_test(NAME AllTestsInCameraFactory COMMAND testcameraFactory)
+add_test(NAME AllTestsInCameraFactory 
+    COMMAND ssh pi@pisquanch '/${PI_TEST_INSTALL_PATH}testcameraFactory')
 
 add_subdirectory(test/testcameraAdapter)
 add_test(NAME AllTestsInCameraAdapter COMMAND testcameraAdapter)
