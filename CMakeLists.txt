@@ -21,16 +21,13 @@ include(CTest)
 ## Directories to add to build
 add_subdirectory(main)
 
-add_subdirectory(test/testfoo)
-add_test(NAME AllTestsInFoo COMMAND testfoo)
-add_subdirectory(libfoo)
-
 add_subdirectory(test/testcameraFactory)
 add_test(NAME AllTestsInCameraFactory 
     COMMAND ssh pi@pisquanch '/${PI_TEST_INSTALL_PATH}testcameraFactory')
 
 add_subdirectory(test/testcameraAdapter)
-add_test(NAME AllTestsInCameraAdapter COMMAND testcameraAdapter)
+add_test(NAME AllTestsInCameraAdapter 
+    COMMAND ssh pi@pisquanch '/${PI_TEST_INSTALL_PATH}testcameraAdapter')
 
 add_subdirectory(lib/gmock)
 
