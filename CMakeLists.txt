@@ -10,7 +10,8 @@ SET(PI_INSTALL_PATH home/pi/NestCamera/build/)
 SET(PI_TEST_INSTALL_PATH home/pi/NestCamera/test/bin/)
 
 ## Libraries
-SET(raspicam_DIR install_tools/raspicam-0.1.3/build)
+# For cross compiling, make sure to also cross compile this package (this could
+# probably be setup better)
 find_package(raspicam REQUIRED)
 
 ## Project Configuration
