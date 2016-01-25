@@ -15,3 +15,10 @@ bool CameraAdapter::getCamera() {
     return(m_cam->open());
 }
 
+void CameraAdapter::configureCamera(CameraConfig* cfg) {
+    m_cam->setWidth(cfg->width);
+    m_cam->setHeight(cfg->height);
+    m_cam->setHorizontalFlip(cfg->hFlip);
+    m_cam->setVerticalFlip(cfg->vFlip);
+
+}
