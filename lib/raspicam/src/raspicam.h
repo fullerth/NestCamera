@@ -85,59 +85,59 @@ namespace raspicam {
         /**
          * Returns the size of the images captured.
          */
-        size_t getImageBufferSize() const;
+        virtual size_t getImageBufferSize() const;
 
 
         /** Stops camera and free resources
         */
-        void release();
+        virtual void release();
 
         /**Sets capture format
          */
-        void setFormat ( RASPICAM_FORMAT fmt );
+        virtual void setFormat ( RASPICAM_FORMAT fmt );
         /**Sets camera width. Use a multiple of 320 (640, 1280)
          */
-        void setWidth ( unsigned int width ) ;
+        virtual void setWidth ( unsigned int width ) ;
         /**Sets camera Height. Use a multiple of 240 (480, 960)
          */
-        void setHeight ( unsigned int height );
-        void setCaptureSize ( unsigned int width, unsigned int height );
+        virtual void setHeight ( unsigned int height );
+        virtual void setCaptureSize ( unsigned int width, unsigned int height );
         /** Set image brightness [0,100]
          */
-        void setBrightness ( unsigned int brightness );
+        virtual void setBrightness ( unsigned int brightness );
         /**
          * Set image sharpness (-100 to 100)
          */
-        void setSharpness ( int sharpness );
+        virtual void setSharpness ( int sharpness );
         /**
          *  Set image contrast (-100 to 100)
          */
-        void setContrast ( int contrast );
+        virtual void setContrast ( int contrast );
         /**
          * Set capture ISO (100 to 800)
          */
-        void setISO ( int iso );
+        virtual void setISO ( int iso );
         /**
          * Set image saturation (-100 to 100)
          */
-        void setSaturation ( int saturation );
+        virtual void setSaturation ( int saturation );
         /**Sets on/off video stabilisation
          */
-        void setVideoStabilization ( bool v );
+        virtual void setVideoStabilization ( bool v );
         /**
          *  Set EV compensation (-10,10)
          */
-        void setExposureCompensation ( int val ); //-10,10
-        void setRotation ( int rotation );
-        void setExposure ( RASPICAM_EXPOSURE exposure );
-        void setShutterSpeed ( unsigned int ss );
-        void setAWB ( RASPICAM_AWB awb );
+        virtual void setExposureCompensation ( int val ); //-10,10
+        virtual void setRotation ( int rotation );
+        virtual void setExposure ( RASPICAM_EXPOSURE exposure );
+        virtual void setShutterSpeed ( unsigned int ss );
+        virtual void setAWB ( RASPICAM_AWB awb );
         // et specific values for whitebalance. Requires to set seAWB in OFF mode first
-        void setAWB_RB ( float r,float b );//range is 0-1.
-        void setImageEffect ( RASPICAM_IMAGE_EFFECT imageEffect );
-        void setMetering ( RASPICAM_METERING metering );
-        void setHorizontalFlip ( bool hFlip );
-        void setVerticalFlip ( bool vFlip );
+        virtual void setAWB_RB ( float r,float b );//range is 0-1.
+        virtual void setImageEffect ( RASPICAM_IMAGE_EFFECT imageEffect );
+        virtual void setMetering ( RASPICAM_METERING metering );
+        virtual void setHorizontalFlip ( bool hFlip );
+        virtual void setVerticalFlip ( bool vFlip );
 
         //Accessors
         RASPICAM_FORMAT getFormat() const;
