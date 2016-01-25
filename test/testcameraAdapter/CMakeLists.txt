@@ -6,8 +6,10 @@ set(TEST_CAMERA_ADAPTER_SOURCES
 
 add_executable(testcameraAdapter ${TEST_CAMERA_ADAPTER_SOURCES})
 
+## Libraries
 target_link_libraries(testcameraAdapter
     gmock
+    ${raspicam_LIBS}
 )
 
 include_directories(
@@ -19,3 +21,5 @@ include_directories(
 
 install(TARGETS testcameraAdapter 
     DESTINATION ${HOST_MOUNTPOINT}${PI_TEST_INSTALL_PATH})
+
+

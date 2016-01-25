@@ -1,4 +1,4 @@
-## CMakeLists.txt
+# CMakeLists.txt
 cmake_minimum_required(VERSION 2.8.7)
 project(NestCamera)
 
@@ -43,7 +43,9 @@ include_directories(
 ## Executables
 set(MAIN_SOURCES
     main/main.cxx
-    cameraFactory/cameraFactory.cxx)
+    cameraFactory/cameraFactory.cxx
+    cameraAdapter/cameraAdapter.cxx
+   )
 
 
 add_executable(NestCamera
