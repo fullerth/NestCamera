@@ -9,7 +9,7 @@ class CameraAdapter {
         CameraAdapter();
         CameraAdapter(raspicam::RaspiCam* cam);
         VideoAdapter getVideo();
-        void getCamera();
+        bool getCamera();
 
     private:
         raspicam::RaspiCam* m_cam;

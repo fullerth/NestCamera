@@ -11,7 +11,7 @@ VideoAdapter CameraAdapter::getVideo() {
 
 }
 
-void CameraAdapter::getCamera() {
-    m_cam->open();
+bool CameraAdapter::getCamera() {
+    return(m_cam->open());
 }
 
