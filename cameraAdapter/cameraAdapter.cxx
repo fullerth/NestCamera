@@ -1,5 +1,8 @@
 #include "cameraAdapter/cameraAdapter.h"
 
+/**********************************************************
+ * Camera Adapter Functions                               *
+ **********************************************************/
 CameraAdapter::CameraAdapter() {
 
 }
@@ -22,3 +25,4 @@ void CameraAdapter::configureCamera(CameraConfig* cfg) {
     m_cam->setVerticalFlip(cfg->vFlip);
 
 }
+

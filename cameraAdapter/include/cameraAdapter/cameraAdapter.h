@@ -5,10 +5,10 @@
 #define __NEST_CAMERA_CAMERA_ADAPTER__
 
 struct CameraConfig {
-    int width;
-    int height;
-    bool hFlip;
-    bool vFlip;
+    int width = 800;
+    int height = 600;
+    bool hFlip = true;
+    bool vFlip = false;
 };
 
 class CameraAdapter {
