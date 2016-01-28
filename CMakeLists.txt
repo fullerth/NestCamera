@@ -52,7 +52,7 @@ add_executable(NestCamera
     ${MAIN_SOURCES}
 	       )
 
-       install(TARGETS NestCamera 
+install(TARGETS NestCamera 
     RUNTIME DESTINATION ${HOST_MOUNTPOINT}${PI_INSTALL_PATH})
 
 
