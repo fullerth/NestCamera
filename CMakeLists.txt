@@ -8,6 +8,8 @@ SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} /usr/local/lib/cmake/)
 SET(HOST_MOUNTPOINT /mnt/pisquanch/)
 SET(PI_INSTALL_PATH home/pi/NestCamera/build/)
 SET(PI_TEST_INSTALL_PATH home/pi/NestCamera/test/bin/)
+SET(PI_HOSTNAME 10.1.10.132)
+SET(PI_USERNAME pi)
 
 ## Libraries
 # For cross compiling, make sure to also cross compile this package (this could
@@ -24,11 +26,11 @@ add_subdirectory(main)
 
 add_subdirectory(test/testcameraFactory)
 add_test(NAME AllTestsInCameraFactory 
-    COMMAND ssh pi@pisquanch '/${PI_TEST_INSTALL_PATH}testcameraFactory')
+    COMMAND ssh ${PI_USERNAME}@${PI_HOSTNAME} '/${PI_TEST_INSTALL_PATH}testcameraFactory')
 
 add_subdirectory(test/testcameraAdapter)
 add_test(NAME AllTestsInCameraAdapter 
-    COMMAND ssh pi@pisquanch '/${PI_TEST_INSTALL_PATH}testcameraAdapter')
+    COMMAND ssh ${PI_USERNAME}@${PI_HOSTNAME} '/${PI_TEST_INSTALL_PATH}testcameraAdapter')
 
 add_subdirectory(lib/gmock)
 
