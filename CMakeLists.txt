@@ -8,7 +8,7 @@ SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} /usr/local/lib/cmake/)
 SET(HOST_MOUNTPOINT /mnt/pisquanch/)
 SET(PI_INSTALL_PATH home/pi/NestCamera/build/)
 SET(PI_TEST_INSTALL_PATH home/pi/NestCamera/test/bin/)
-SET(PI_HOSTNAME 10.1.10.132)
+SET(PI_HOSTNAME pisquanch)
 SET(PI_USERNAME pi)
 
 ## Libraries
