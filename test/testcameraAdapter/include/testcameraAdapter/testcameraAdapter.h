@@ -3,7 +3,8 @@
 
 namespace testcameraAdapter
 {
-    void addConfigureExpectations(raspicam::MockRaspiCam* m, CameraConfig* cfg);
+    using ::testing::ExpectationSet;
+    ExpectationSet addConfigureExpectations(raspicam::MockRaspiCam* m, CameraConfig* cfg);
 
 }
 

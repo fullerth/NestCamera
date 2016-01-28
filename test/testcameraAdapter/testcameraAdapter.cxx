@@ -6,11 +6,12 @@
 
 using ::testing::_;
 using ::testing::Return;
+using ::testing::InSequence;
 
 namespace testcameraAdapter
 {
     // getVideo
-    TEST(cameraAdapter, hasGetVideoMethod) {
+    TEST(cameraAdapter, getVideoMethodCallsConfig) {
         CameraAdapter c = CameraAdapter();
         VideoAdapter v = c.getVideo();
     }
@@ -41,12 +42,14 @@ namespace testcameraAdapter
     }
 
     //Helper functions
-    void addConfigureExpectations(raspicam::MockRaspiCam* m, CameraConfig* cfg)
+    ExpectationSet addConfigureExpectations(raspicam::MockRaspiCam* m, CameraConfig* cfg)
     {
-        EXPECT_CALL(*m, setWidth(cfg->width)).Times(1);
-        EXPECT_CALL(*m, setHeight(cfg->height)).Times(1);
-        EXPECT_CALL(*m, setHorizontalFlip(cfg->hFlip)).Times(1);
-        EXPECT_CALL(*m, setVerticalFlip(cfg->vFlip)).Times(1); 
+        ExpectationSet cfg_set;
+        cfg_set += EXPECT_CALL(*m, setWidth(cfg->width)).Times(1);
+        cfg_set += EXPECT_CALL(*m, setHeight(cfg->height)).Times(1);
+        cfg_set += EXPECT_CALL(*m, setHorizontalFlip(cfg->hFlip)).Times(1);
+        cfg_set += EXPECT_CALL(*m, setVerticalFlip(cfg->vFlip)).Times(1); 
+        return cfg_set;
     }
 
 }
