@@ -3,11 +3,13 @@
 #include <iostream>
 #include <unistd.h>
 #include <raspicam/raspicam.h>
+#include "cameraAdapter/cameraAdapter.h"
 
 using namespace std;
 
 int main(int argc, char **argv) {
 	raspicam::RaspiCam Camera; //Cmaera object
+    CameraAdapter adapter(&Camera);
 	//Open camera 
 	cout << "Opening Camera..." << endl; 
 	if ( !Camera.open()) {

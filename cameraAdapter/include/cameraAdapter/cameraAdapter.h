@@ -16,7 +16,7 @@ class CameraAdapter {
         CameraAdapter();
         CameraAdapter(raspicam::RaspiCam* cam);
         VideoAdapter getVideo();
-        bool getCamera();
+        bool openCamera();
         void configureCamera(CameraConfig* cfg);
 
     private:

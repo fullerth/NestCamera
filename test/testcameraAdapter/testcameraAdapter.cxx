@@ -20,19 +20,19 @@ namespace testcameraAdapter
     }
 
     // getCamera
-    TEST(cameraAdapter, getCameraCallsOpen) {
+    TEST(cameraAdapter, openCameraCallsOpen) {
         raspicam::MockRaspiCam m;
         EXPECT_CALL(m, open(_)).Times(1);
         CameraAdapter c = CameraAdapter(&m);    
-        c.getCamera();
+        c.openCamera();
     }
 
-    TEST(cameraAdapter, getCameraCorrectlyReturnsValues) {
+    TEST(cameraAdapter, openCameraCorrectlyReturnsValues) {
         raspicam::MockRaspiCam m;
         EXPECT_CALL(m, open(_)).WillOnce(Return(true)).WillOnce(Return(false));
         CameraAdapter c = CameraAdapter(&m);
-        ASSERT_TRUE(c.getCamera());
-        ASSERT_FALSE(c.getCamera());
+        ASSERT_TRUE(c.openCamera());
+        ASSERT_FALSE(c.openCamera());
     }
 
     //configureCamera
