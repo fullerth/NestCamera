@@ -26,11 +26,13 @@ add_subdirectory(main)
 
 add_subdirectory(test/testcameraFactory)
 add_test(NAME AllTestsInCameraFactory 
-    COMMAND ssh ${PI_USERNAME}@${PI_HOSTNAME} '/${PI_TEST_INSTALL_PATH}testcameraFactory')
+    COMMAND ssh ${PI_USERNAME}@${PI_HOSTNAME} /
+    '/${PI_TEST_INSTALL_PATH}testcameraFactory')
 
 add_subdirectory(test/testcameraAdapter)
 add_test(NAME AllTestsInCameraAdapter 
-    COMMAND ssh ${PI_USERNAME}@${PI_HOSTNAME} '/${PI_TEST_INSTALL_PATH}testcameraAdapter')
+    COMMAND ssh ${PI_USERNAME}@${PI_HOSTNAME} /
+    '/${PI_TEST_INSTALL_PATH}testcameraAdapter')
 
 add_subdirectory(lib/gmock)
 
