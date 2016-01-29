@@ -11,6 +11,8 @@ CameraAdapter::CameraAdapter(raspicam::RaspiCam* cam) : m_cam(cam) {
 }
 
 VideoAdapter CameraAdapter::getVideo() {
+    this->configureCamera(&m_cfg);
+    m_cam->open();
 
 }
 

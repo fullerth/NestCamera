@@ -21,6 +21,7 @@ class CameraAdapter {
 
     private:
         raspicam::RaspiCam* m_cam;
+        CameraConfig m_cfg = CameraConfig();
 };
 
 #endif //__NEST_CAMERA_CAMERA_ADAPTER__

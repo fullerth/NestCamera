@@ -6,13 +6,16 @@
 
 using ::testing::_;
 using ::testing::Return;
-using ::testing::InSequence;
 
 namespace testcameraAdapter
 {
     // getVideo
-    TEST(cameraAdapter, getVideoMethodCallsConfig) {
-        CameraAdapter c = CameraAdapter();
+    TEST(cameraAdapter, getVideoMethodCallsConfigBeforeOpen) {
+        CameraConfig cfg = CameraConfig();
+        raspicam::MockRaspiCam m;
+        ExpectationSet cfg_expects = addConfigureExpectations(&m, &cfg);
+        EXPECT_CALL(m, open(_)).After(cfg_expects);
+        CameraAdapter c = CameraAdapter(&m);
         VideoAdapter v = c.getVideo();
     }
 
