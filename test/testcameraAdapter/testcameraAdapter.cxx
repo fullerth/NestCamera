@@ -15,6 +15,8 @@ namespace testcameraAdapter
         raspicam::MockRaspiCam m;
         ExpectationSet cfg_expects = addConfigureExpectations(&m, &cfg);
         EXPECT_CALL(m, open(_)).After(cfg_expects);
+        //grab expectations
+        EXPECT_CALL(m, grab()).Times(1);
         CameraAdapter c = CameraAdapter(&m);
         VideoAdapter v = c.getVideo();
     }
