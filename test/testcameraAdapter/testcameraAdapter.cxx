@@ -1,7 +1,7 @@
 #include "cameraAdapter/cameraAdapter.h"
 #include "gtest/gtest.h"
 #include "videoAdapter/videoAdapter.h"
-#include "raspicam/mocks/mockRaspiCam.h"
+#include "raspicam/mockRaspiCam.h"
 #include "testcameraAdapter/testcameraAdapter.h"
 
 using ::testing::_;

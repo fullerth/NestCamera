@@ -2,7 +2,7 @@ INCLUDE_DIRECTORIES(.)
 SET(private_hdrs_base "private/private_types.h  private/private_impl.h exceptions.h private/threadcondition.h ")
 SET(private_still_hdrs_base "private_still/private_still_types.h  private/private_still_impl.h")
 
-SET(public_hdrs_base raspicamtypes.h raspicam.h)
+SET(public_hdrs_base "mocks/mockRaspiCam.h" raspicamtypes.h raspicam.h)
 
 SET(srcs_base raspicam.cpp raspicam_still.cpp  private/private_impl.cpp private/threadcondition.cpp  private_still/private_still_impl.cpp)
 if(NOT( ${CMAKE_SYSTEM_PROCESSOR} MATCHES arm*) )#in a pc, adds fake dependencies to mmal functions to enable compilation
