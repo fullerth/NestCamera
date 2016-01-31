@@ -35,6 +35,14 @@ namespace testcameraAdapter
         ASSERT_FALSE(c.openCamera());
     }
 
+    //grab
+    TEST(cameraAdapter, grabCameraCallsGrab) {
+        raspicam::MockRaspiCam m;
+        EXPECT_CALL(m, grab()).Times(1);
+        CameraAdapter c = CameraAdapter(&m);
+        c.grab();
+    }
+
     //configureCamera
     TEST(cameraAdapter, configureCameraCallsSetters) {
         CameraConfig cfg = CameraConfig();

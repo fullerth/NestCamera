@@ -20,6 +20,10 @@ bool CameraAdapter::openCamera() {
     return(m_cam->open());
 }
 
+bool CameraAdapter::grab() {
+    m_cam->grab();
+}    
+
 void CameraAdapter::configureCamera(CameraConfig* cfg) {
     m_cam->setWidth(cfg->width);
     m_cam->setHeight(cfg->height);
