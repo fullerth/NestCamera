@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
     CameraAdapter adapter(&Camera);
 	//Open camera 
 	cout << "Opening Camera..." << endl; 
-	if ( !Camera.open()) {
+	if ( !(adapter.openCamera())) {
 		cerr << "Error opening camera" << endl;
 		return - 1;
 	} 
@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
 	cout<<"Sleeping for 3 secs"<<endl; 
 	sleep(3);
 	//capture
-	Camera.grab();
+	adapter.grab();
 	//allocate memory
 	unsigned char *data = new unsigned char[Camera.getImageTypeSize(raspicam::RASPICAM_FORMAT_RGB)];
 	//extract the image in rgb format
