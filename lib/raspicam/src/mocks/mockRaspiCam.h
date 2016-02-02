@@ -25,7 +25,12 @@ namespace raspicam {
                     void(bool));
             MOCK_METHOD1(setVerticalFlip,
                     void(bool));
+            //RASPICAM_FORMAT is depreciated, so not mocking that method 
+            //signature for retrieve
+            MOCK_METHOD1(retrieve,
+                    void(unsigned char *));
                     
+
     };
 
 }  // namespace raspicam
