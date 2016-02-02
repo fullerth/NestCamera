@@ -2,14 +2,15 @@
 cmake_minimum_required(VERSION 2.8.7)
 project(NestCamera)
 
+# Must set PI_HOSTNAME and PI_USERNAME variables to reach the pi
+include("LocalPiInfo.txt")
+
 SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} /usr/local/lib/cmake/)
 
 ## Raspberry Pi Setup
 SET(HOST_MOUNTPOINT /mnt/pisquanch/)
 SET(PI_INSTALL_PATH home/pi/NestCamera/build/)
 SET(PI_TEST_INSTALL_PATH home/pi/NestCamera/test/bin/)
-SET(PI_HOSTNAME pisquanch)
-SET(PI_USERNAME pi)
 
 ## Libraries
 # For cross compiling, make sure to also cross compile this package (this could
