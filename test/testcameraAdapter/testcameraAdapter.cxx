@@ -53,6 +53,7 @@ namespace testcameraAdapter
         //allocate memory
 	    unsigned char *data = new unsigned char[60000];
         c.retrieve(data);
+        delete data;
     }
 
     //configureCamera
