@@ -38,11 +38,21 @@ namespace testcameraAdapter
     }
 
     //grab
-    TEST(cameraAdapter, grabCameraCallsGrab) {
+    TEST(cameraAdapter, grabCallsParentGrab) {
         raspicam::MockRaspiCam m;
         EXPECT_CALL(m, grab()).Times(1);
         CameraAdapter c = CameraAdapter(&m);
         c.grab();
+    }
+
+    //retrieve
+    TEST(cameraAdapter, retrieveCallsParentRetrieve) {
+        raspicam::MockRaspiCam m;
+        EXPECT_CALL(m, retrieve(_,_)).Times(1);
+        CameraAdapter c = CameraAdapter(&m);
+        //allocate memory
+	    unsigned char *data = new unsigned char[60000];
+        c.retrieve(data);
     }
 
     //configureCamera

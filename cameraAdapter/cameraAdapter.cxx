@@ -25,6 +25,11 @@ bool CameraAdapter::grab() {
     m_cam->grab();
 }    
 
+void CameraAdapter::retrieve(unsigned char *data) {
+    m_cam->retrieve(data, raspicam::RASPICAM_FORMAT_RGB);
+    
+}
+
 void CameraAdapter::configureCamera(CameraConfig* cfg) {
     m_cam->setWidth(cfg->width);
     m_cam->setHeight(cfg->height);

@@ -14,7 +14,7 @@ namespace raspicam {
             MOCK_METHOD0(grab,
                     bool());
             MOCK_METHOD2(retrieve,
-                    void(char, RASPICAM_FORMAT));
+                    void(unsigned char*, RASPICAM_FORMAT));
             MOCK_CONST_METHOD0(getImageBufferData,
                     unsigned char*());
             MOCK_METHOD1(setWidth,
@@ -25,10 +25,6 @@ namespace raspicam {
                     void(bool));
             MOCK_METHOD1(setVerticalFlip,
                     void(bool));
-            //RASPICAM_FORMAT is depreciated, so not mocking that method 
-            //signature for retrieve
-            MOCK_METHOD1(retrieve,
-                    void(unsigned char *));
                     
 
     };

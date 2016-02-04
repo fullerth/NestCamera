@@ -18,6 +18,7 @@ class CameraAdapter {
         VideoAdapter getVideo();
         bool openCamera();
         bool grab();
+        void retrieve ( unsigned char *data);
         void configureCamera(CameraConfig* cfg);
 
     private:
