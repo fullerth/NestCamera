@@ -51,9 +51,8 @@ namespace testcameraAdapter
         EXPECT_CALL(m, retrieve(_,_)).Times(1);
         CameraAdapter c = CameraAdapter(&m);
         //allocate memory
-	    unsigned char *data = new unsigned char[60000];
+	    unsigned char data[60000];
         c.retrieve(data);
-        delete data;
     }
 
     //configureCamera
