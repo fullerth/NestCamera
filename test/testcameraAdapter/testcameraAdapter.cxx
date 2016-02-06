@@ -59,9 +59,18 @@ namespace testcameraAdapter
     TEST(cameraAdapter, getImageSizeCallsParent) {
         raspicam::MockRaspiCam m;
         EXPECT_CALL(m, getImageTypeSize(raspicam::RASPICAM_FORMAT_RGB)
-            ).WillOnce(Return(20));
+                ).WillOnce(Return(20));
         CameraAdapter c = CameraAdapter(&m);
         EXPECT_EQ(c.getImageSize(), 20);
+    }
+
+    //getWidth
+    TEST(cameraAdapter, getWidthCallsParent) {
+        raspicam::MockRaspiCam m;
+        EXPECT_CALL(m, getWidth()).WillOnce(Return(20));
+        CameraAdapter c = CameraAdapter(&m);
+        EXPECT_EQ(c.getWidth(), 20);
+
     }
 
     //configureCamera

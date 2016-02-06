@@ -42,3 +42,6 @@ void CameraAdapter::configureCamera(CameraConfig* cfg) {
 
 }
 
+unsigned int CameraAdapter::getWidth() {
+    return (m_cam->getWidth());
+}
