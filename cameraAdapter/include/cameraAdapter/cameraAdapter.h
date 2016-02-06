@@ -18,8 +18,10 @@ class CameraAdapter {
         VideoAdapter getVideo();
         bool openCamera();
         bool grab();
+        size_t getImageSize() const;
         void retrieve ( unsigned char *data);
         void configureCamera(CameraConfig* cfg);
+
 
     private:
         raspicam::RaspiCam* m_cam;

@@ -51,8 +51,17 @@ namespace testcameraAdapter
         EXPECT_CALL(m, retrieve(_,_)).Times(1);
         CameraAdapter c = CameraAdapter(&m);
         //allocate memory
-	    unsigned char data[60000];
+        unsigned char data[60000];
         c.retrieve(data);
+    }
+
+    //getImageTypeSize
+    TEST(cameraAdapter, getImageSizeCallsParent) {
+        raspicam::MockRaspiCam m;
+        EXPECT_CALL(m, getImageTypeSize(raspicam::RASPICAM_FORMAT_RGB)
+            ).WillOnce(Return(20));
+        CameraAdapter c = CameraAdapter(&m);
+        EXPECT_EQ(c.getImageSize(), 20);
     }
 
     //configureCamera

@@ -25,6 +25,10 @@ bool CameraAdapter::grab() {
     m_cam->grab();
 }    
 
+size_t CameraAdapter::getImageSize() const {
+    return(m_cam->getImageTypeSize(raspicam::RASPICAM_FORMAT_RGB));
+}
+
 void CameraAdapter::retrieve(unsigned char *data) {
     m_cam->retrieve(data, raspicam::RASPICAM_FORMAT_RGB);
     

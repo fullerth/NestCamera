@@ -25,6 +25,8 @@ namespace raspicam {
                     void(bool));
             MOCK_METHOD1(setVerticalFlip,
                     void(bool));
+            MOCK_CONST_METHOD1(getImageTypeSize,
+                    size_t(RASPICAM_FORMAT));
                     
 
     };

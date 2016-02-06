@@ -169,7 +169,7 @@ namespace raspicam {
 
         /**Returns the size of the required buffer for the different image types in retrieve
          */
-        size_t getImageTypeSize ( RASPICAM_FORMAT type ) const;
+        virtual size_t getImageTypeSize ( RASPICAM_FORMAT type ) const;
         private:
         _private::Private_Impl *_impl;
     };
