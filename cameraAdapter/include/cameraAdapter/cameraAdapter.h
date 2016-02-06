@@ -22,6 +22,7 @@ class CameraAdapter {
         void retrieve ( unsigned char *data);
         void configureCamera(CameraConfig* cfg);
         unsigned int getWidth();
+        unsigned int getHeight();
 
     private:
         raspicam::RaspiCam* m_cam;

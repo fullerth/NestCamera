@@ -70,7 +70,14 @@ namespace testcameraAdapter
         EXPECT_CALL(m, getWidth()).WillOnce(Return(20));
         CameraAdapter c = CameraAdapter(&m);
         EXPECT_EQ(c.getWidth(), 20);
+    }
 
+    //getHeight
+    TEST(cameraAdapter, getHeightCallsParent) {
+        raspicam::MockRaspiCam m;
+        EXPECT_CALL(m, getHeight()).WillOnce(Return(35));
+        CameraAdapter c = CameraAdapter(&m);
+        EXPECT_EQ(c.getHeight(), 35);
     }
 
     //configureCamera

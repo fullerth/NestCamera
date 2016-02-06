@@ -29,8 +29,8 @@ namespace raspicam {
                     size_t(RASPICAM_FORMAT));
             MOCK_CONST_METHOD0(getWidth,
                     unsigned int());
-                    
-
+            MOCK_CONST_METHOD0(getHeight,
+                    unsigned int()); 
     };
 
 }  // namespace raspicam

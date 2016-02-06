@@ -142,7 +142,7 @@ namespace raspicam {
         //Accessors
         RASPICAM_FORMAT getFormat() const;
         virtual unsigned int getWidth() const;
-        unsigned int getHeight() const;
+        virtual unsigned int getHeight() const;
         unsigned int getBrightness() const;
         unsigned int getRotation() const;
         int getISO() const;
