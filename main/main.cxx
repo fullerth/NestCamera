@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
 	adapter.retrieve(data);
 
 	std::ofstream outFile("raspicam_image.ppm",std::ios::binary);
-	outFile << "P6\n" << Camera.getWidth() << " " << Camera.getHeight() << " 255\n";
+	outFile << "P6\n" << adapter.getWidth() << " " << adapter.getHeight() << " 255\n";
 	outFile.write((char*) data, adapter.getImageSize());
 	cout << "Image saved at raspicam_image.ppm" << endl;
 	//free resources    
