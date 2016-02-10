@@ -9,6 +9,7 @@ add_executable(testcameraFactory ${TEST_CAMERA_FACTORY_SOURCES})
 
 target_link_libraries(testcameraFactory
     gmock
+    ${raspicam_LIBS}
 )
 
 include_directories(

@@ -4,10 +4,12 @@
  * Camera Adapter Functions                               *
  **********************************************************/
 CameraAdapter::CameraAdapter() {
-
 }
 
-CameraAdapter::CameraAdapter(raspicam::RaspiCam* cam) : m_cam(cam) {
+CameraAdapter::CameraAdapter(std::shared_ptr<raspicam::RaspiCam> cam) : m_cam(cam) {
+}
+
+CameraAdapter::~CameraAdapter() {
 }
 
 VideoAdapter CameraAdapter::getVideo() {

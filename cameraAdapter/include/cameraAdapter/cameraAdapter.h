@@ -1,3 +1,4 @@
+#include <memory>
 #include "videoAdapter/videoAdapter.h"
 #include "raspicam/raspicam.h"
 
@@ -14,7 +15,8 @@ struct CameraConfig {
 class CameraAdapter {
     public: 
         CameraAdapter();
-        CameraAdapter(raspicam::RaspiCam* cam);
+        CameraAdapter(std::shared_ptr<raspicam::RaspiCam> cam);
+        ~CameraAdapter();
         VideoAdapter getVideo();
         bool openCamera();
         bool grab();
@@ -25,7 +27,7 @@ class CameraAdapter {
         unsigned int getHeight();
 
     private:
-        raspicam::RaspiCam* m_cam;
+        std::shared_ptr<raspicam::RaspiCam> m_cam;
         CameraConfig m_cfg = CameraConfig();
 };
 
