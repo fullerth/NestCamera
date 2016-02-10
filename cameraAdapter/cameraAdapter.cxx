@@ -4,6 +4,7 @@
  * Camera Adapter Functions                               *
  **********************************************************/
 CameraAdapter::CameraAdapter() {
+    m_cam = std::shared_ptr<raspicam::RaspiCam>(new raspicam::RaspiCam);
 }
 
 CameraAdapter::CameraAdapter(std::shared_ptr<raspicam::RaspiCam> cam) : m_cam(cam) {

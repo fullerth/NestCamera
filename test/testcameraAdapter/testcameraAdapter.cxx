@@ -11,6 +11,13 @@ using namespace std;
 namespace testcameraAdapter
 {
 
+    // Default Constructor
+    TEST(cameraAdapter, defaultConstructorCreatesRaspiCam) {
+        CameraAdapter c = CameraAdapter();
+        //Can't call open camera if m_cam is null
+        c.openCamera();
+    }
+
     // getVideo
     TEST(cameraAdapter, getVideoMethodCallsConfigBeforeOpen) {
         CameraConfig cfg = CameraConfig();
