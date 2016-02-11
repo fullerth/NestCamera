@@ -2,15 +2,13 @@
 #include <fstream>
 #include <iostream>
 #include <unistd.h>
-#include <raspicam/raspicam.h>
 #include <memory>
 #include "cameraAdapter/cameraAdapter.h"
 
 using namespace std;
 
 int main(int argc, char **argv) {
-	shared_ptr<raspicam::RaspiCam> pCamera(new raspicam::RaspiCam); //Cmaera object
-    CameraAdapter adapter(pCamera);
+    CameraAdapter adapter = CameraAdapter();
 	//Open camera 
 	cout << "Opening Camera..." << "\n"; 
 	if ( !(adapter.openCamera())) {
