@@ -20,6 +20,10 @@ VideoAdapter CameraAdapter::getVideo() {
 
 }
 
+ImageAdapter CameraAdapter::getImage() {
+
+}
+
 bool CameraAdapter::openCamera() {
     return(m_cam->open());
 }

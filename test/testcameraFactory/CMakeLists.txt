@@ -18,6 +18,7 @@ include_directories(
     "../../cameraFactory/include"
     "../../cameraAdapter/include"
     "../../videoAdapter/include"
+    "../../imageAdapter/include"
 )
 
 install(TARGETS testcameraFactory 

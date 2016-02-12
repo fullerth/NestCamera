@@ -1,6 +1,7 @@
 #include <memory>
 #include "videoAdapter/videoAdapter.h"
 #include "raspicam/raspicam.h"
+#include "imageAdapter/imageAdapter.h"
 
 #ifndef __NEST_CAMERA_CAMERA_ADAPTER__
 #define __NEST_CAMERA_CAMERA_ADAPTER__
@@ -18,6 +19,7 @@ class CameraAdapter {
         CameraAdapter(std::shared_ptr<raspicam::RaspiCam> cam);
         ~CameraAdapter();
         VideoAdapter getVideo();
+        ImageAdapter getImage();
         bool openCamera();
         bool grab();
         size_t getImageSize() const;

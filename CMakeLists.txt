@@ -40,6 +40,11 @@ add_test(NAME AllTestsInTouchscreenAdapter
     COMMAND ssh ${PI_USERNAME}@${PI_HOSTNAME} 
     '/${PI_TEST_INSTALL_PATH}testtouchscreenAdapter')
 
+add_subdirectory(test/testimageAdapter)
+add_test(NAME AllTestsInImageAdapter
+    COMMAND ssh ${PI_USERNAME}@${PI_HOSTNAME} 
+    '/${PI_TEST_INSTALL_PATH}testimageAdapter')
+
 add_subdirectory(lib/gmock)
 
 include_directories(
@@ -48,6 +53,7 @@ include_directories(
     "cameraFactory/include"
     "cameraAdapter/include"
     "videoAdapter/include"
+    "imageAdapter/include"
 )
 
 ## Executables

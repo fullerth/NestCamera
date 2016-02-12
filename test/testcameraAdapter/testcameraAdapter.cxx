@@ -3,6 +3,7 @@
 #include "videoAdapter/videoAdapter.h"
 #include "raspicam/mockRaspiCam.h"
 #include "testcameraAdapter/testcameraAdapter.h"
+#include "imageAdapter/imageAdapter.h"
 
 using ::testing::_;
 using ::testing::Return;
@@ -28,6 +29,12 @@ namespace testcameraAdapter
         EXPECT_CALL(*m, grab()).Times(1);
         CameraAdapter c = CameraAdapter(m);
         VideoAdapter v = c.getVideo();
+    }
+
+    // getImage
+    TEST(cameraAdapter, getImageMethodExists) {
+        CameraAdapter c = CameraAdapter();
+        ImageAdapter img = c.getImage();
     }
 
     // getCamera

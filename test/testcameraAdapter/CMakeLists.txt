@@ -17,6 +17,7 @@ include_directories(
     "../../lib/gmock/include"
     "../../cameraAdapter/include"
     "../../videoAdapter/include"
+    "../../imageAdapter/include"
     "include"
 )
 
