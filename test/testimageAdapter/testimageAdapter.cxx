@@ -6,3 +6,9 @@ TEST(imageAdapter, constructorTakesSize) {
     ImageAdapter img = ImageAdapter(size);
     EXPECT_EQ(img.getSize(), size);
 }
+
+TEST(imageAdapter, saveMethodExists) {
+    ImageAdapter img = ImageAdapter(25);
+    img.save();
+
+}

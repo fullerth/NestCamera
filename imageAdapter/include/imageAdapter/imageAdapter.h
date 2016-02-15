@@ -7,6 +7,7 @@ class ImageAdapter {
     public:
         ImageAdapter(size_t s);
         size_t getSize();
+        void save();
 
     private:
         size_t m_size;
