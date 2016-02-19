@@ -18,12 +18,14 @@ and mountpoint are in three files.
 
 ## LocalPiInfo.sh
 Sets Bash variables for use in mountpi.sh
+
 `pi_username` - Username for ssh/sshfs to the pi
 
 `pi_hostname` - Hostname for the pi
 
 ## LocalPiInfo.txt
 Sets CMAKE variables
+
 `SET PI_USERNAME` - Username for ssh/sshfs to the pi
 
 `SET PI_HOSTNAME` - Hostname for the pi
