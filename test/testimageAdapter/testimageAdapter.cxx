@@ -1,5 +1,4 @@
-#include "imageAdapter/imageAdapter.h"
-#include "gmock/gmock.h"
+#include "testimageAdapter/testimageAdapter.h"
 
 TEST(imageAdapter, constructorTakesSize) {
     size_t size = 50;
@@ -8,7 +7,7 @@ TEST(imageAdapter, constructorTakesSize) {
 }
 
 TEST(imageAdapter, saveMethodExists) {
+    std::shared_ptr<MockFileStream> outFile(new MockFileStream());
     ImageAdapter img = ImageAdapter(25);
-    img.save();
-
+    img.save(outFile);
 }
