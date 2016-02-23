@@ -7,7 +7,8 @@ TEST(imageAdapter, constructorTakesSize) {
 }
 
 TEST(imageAdapter, saveMethodExists) {
-    std::shared_ptr<MockFileStream> outFile(new MockFileStream());
+    std::ostringstream s;
     ImageAdapter img = ImageAdapter(25);
-    img.save(outFile);
+    img.save(s);
+    EXPECT_EQ(s.str(), "25");
 }

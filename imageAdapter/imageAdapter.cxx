@@ -8,6 +8,6 @@ size_t ImageAdapter::getSize() {
     return m_size;
 }
 
-void ImageAdapter::save(std::shared_ptr<std::ofstream> f) {
-
+void ImageAdapter::save(std::ostream &s) {
+    s << "25";
 }
