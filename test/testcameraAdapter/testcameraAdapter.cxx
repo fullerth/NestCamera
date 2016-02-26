@@ -7,6 +7,7 @@
 
 using ::testing::_;
 using ::testing::Return;
+using ::testing::SetArrayArgument;
 using namespace std;
 
 namespace testcameraAdapter
@@ -38,6 +39,16 @@ namespace testcameraAdapter
         std::shared_ptr<ImageAdapter> img = c.getImage();
         EXPECT_EQ(expected_size, img->getSize()) << "Width: " << c.getWidth() 
             << " Height: " << c.getHeight();
+    }
+
+    TEST(getImage, ImageAdapterContainsCorrectData) {
+        std::shared_ptr<raspicam::MockRaspiCam> m(new raspicam::MockRaspiCam);
+        unsigned char imgData[4] = {10, 20, 30, 40};
+        EXPECT_CALL(*m, retrieve(_,_)
+                ).WillOnce(SetArrayArgument<0>(begin(imgData),end(imgData)));
+        CameraAdapter c = CameraAdapter(m);
+        std::shared_ptr<ImageAdapter> img = c.getImage(); 
+
     }
 
     // openCamera

@@ -1,11 +1,14 @@
+#ifndef __IMAGE_ADAPTER_H__
+#define __IMAGE_ADAPTER_H__
+
 #include <cstddef>
 #include <ostream>
 #include <memory>
 
-#ifndef __IMAGE_ADAPTER_H__
-#define __IMAGE_ADAPTER_H__
+class CameraAdapter;
 
 class ImageAdapter {
+    friend class CameraAdapter;
     public:
         ImageAdapter(size_t s);
         ~ImageAdapter();
@@ -14,8 +17,8 @@ class ImageAdapter {
 
     private:
         size_t m_size;
-        char* m_data;
-        char* m_write_ptr;
+        unsigned char* m_data;
+        unsigned char* m_write_ptr;
 };
 
 #endif

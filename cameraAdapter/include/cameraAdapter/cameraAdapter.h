@@ -1,10 +1,10 @@
+#ifndef __NEST_CAMERA_CAMERA_ADAPTER__
+#define __NEST_CAMERA_CAMERA_ADAPTER__
 #include <memory>
 #include "videoAdapter/videoAdapter.h"
 #include "raspicam/raspicam.h"
 #include "imageAdapter/imageAdapter.h"
 
-#ifndef __NEST_CAMERA_CAMERA_ADAPTER__
-#define __NEST_CAMERA_CAMERA_ADAPTER__
 
 struct CameraConfig {
     int width = 800;

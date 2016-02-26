@@ -22,7 +22,9 @@ std::shared_ptr<VideoAdapter> CameraAdapter::getVideo() {
 
 std::shared_ptr<ImageAdapter> CameraAdapter::getImage() {
     int width = m_cam->getWidth(), height = m_cam->getHeight();
-    return std::shared_ptr<ImageAdapter>(new ImageAdapter(width * height));
+    std::shared_ptr<ImageAdapter> img(new ImageAdapter(width * height));
+    m_cam->retrieve(img->m_data, raspicam::RASPICAM_FORMAT_IGNORE);
+    return img;
 }
 
 bool CameraAdapter::openCamera() {

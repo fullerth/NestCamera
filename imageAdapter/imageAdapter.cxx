@@ -1,6 +1,6 @@
 #include "imageAdapter/imageAdapter.h"
 
-ImageAdapter::ImageAdapter(size_t s) : m_size(s), m_data(new char[s]), 
+ImageAdapter::ImageAdapter(size_t s) : m_size(s), m_data(new unsigned char[s]), 
     m_write_ptr(m_data){
 }
 
