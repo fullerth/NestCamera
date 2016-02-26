@@ -21,7 +21,8 @@ std::shared_ptr<VideoAdapter> CameraAdapter::getVideo() {
 }
 
 std::shared_ptr<ImageAdapter> CameraAdapter::getImage() {
-    return std::shared_ptr<ImageAdapter>(new ImageAdapter(25));
+    int width = m_cam->getWidth(), height = m_cam->getHeight();
+    return std::shared_ptr<ImageAdapter>(new ImageAdapter(width * height));
 }
 
 bool CameraAdapter::openCamera() {

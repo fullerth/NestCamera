@@ -6,9 +6,9 @@ TEST(imageAdapter, constructorTakesSize) {
     EXPECT_EQ(img.getSize(), size);
 }
 
-TEST(imageAdapter, saveMethodExists) {
+TEST(imageAdapter, saveMethodWritesHeader) {
     std::ostringstream s;
-    ImageAdapter img = ImageAdapter(25);
+    ImageAdapter img = ImageAdapter(1);
     img.save(s);
-    EXPECT_EQ(s.str(), "25");
+    EXPECT_EQ("P6\n1280 960 255\n", s.str());
 }

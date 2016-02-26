@@ -34,7 +34,10 @@ namespace testcameraAdapter
     // getImage
     TEST(cameraAdapter, getImageMethodExists) {
         CameraAdapter c = CameraAdapter();
+        int expected_size = c.getWidth() * c.getHeight();
         std::shared_ptr<ImageAdapter> img = c.getImage();
+        EXPECT_EQ(expected_size, img->getSize()) << "Width: " << c.getWidth() 
+            << " Height: " << c.getHeight();
     }
 
     // getCamera

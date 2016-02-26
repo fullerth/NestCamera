@@ -13,6 +13,6 @@ size_t ImageAdapter::getSize() {
 }
 
 void ImageAdapter::save(std::ostream &s) {
-    s << m_size;
+    s << "P6\n1280 960 255\n";
 }
 
