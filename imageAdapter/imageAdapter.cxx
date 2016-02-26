@@ -1,7 +1,11 @@
 #include "imageAdapter/imageAdapter.h"
 
-ImageAdapter::ImageAdapter(size_t s) : m_size(s) {
+ImageAdapter::ImageAdapter(size_t s) : m_size(s), m_data(new char[s]), 
+    m_write_ptr(m_data){
+}
 
+ImageAdapter::~ImageAdapter() {
+    delete[] m_data;
 }
 
 size_t ImageAdapter::getSize() {
@@ -9,5 +13,6 @@ size_t ImageAdapter::getSize() {
 }
 
 void ImageAdapter::save(std::ostream &s) {
-    s << "25";
+    s << m_size;
 }
+

@@ -28,13 +28,13 @@ namespace testcameraAdapter
         //grab expectations
         EXPECT_CALL(*m, grab()).Times(1);
         CameraAdapter c = CameraAdapter(m);
-        VideoAdapter v = c.getVideo();
+        std::shared_ptr<VideoAdapter> v = c.getVideo();
     }
 
     // getImage
     TEST(cameraAdapter, getImageMethodExists) {
         CameraAdapter c = CameraAdapter();
-        ImageAdapter img = c.getImage();
+        std::shared_ptr<ImageAdapter> img = c.getImage();
     }
 
     // getCamera

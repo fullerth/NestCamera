@@ -61,6 +61,7 @@ set(MAIN_SOURCES
     main/main.cxx
     cameraFactory/cameraFactory.cxx
     cameraAdapter/cameraAdapter.cxx
+    imageAdapter/imageAdapter.cxx
    )
 
 

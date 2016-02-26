@@ -13,15 +13,15 @@ CameraAdapter::CameraAdapter(std::shared_ptr<raspicam::RaspiCam> cam) : m_cam(ca
 CameraAdapter::~CameraAdapter() {
 }
 
-VideoAdapter CameraAdapter::getVideo() {
+std::shared_ptr<VideoAdapter> CameraAdapter::getVideo() {
     this->configureCamera(&m_cfg);
     m_cam->open();
     m_cam->grab();
 
 }
 
-ImageAdapter CameraAdapter::getImage() {
-
+std::shared_ptr<ImageAdapter> CameraAdapter::getImage() {
+    return std::shared_ptr<ImageAdapter>(new ImageAdapter(25));
 }
 
 bool CameraAdapter::openCamera() {

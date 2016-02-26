@@ -18,8 +18,8 @@ class CameraAdapter {
         CameraAdapter();
         CameraAdapter(std::shared_ptr<raspicam::RaspiCam> cam);
         ~CameraAdapter();
-        VideoAdapter getVideo();
-        ImageAdapter getImage();
+        std::shared_ptr<VideoAdapter> getVideo();
+        std::shared_ptr<ImageAdapter> getImage();
         bool openCamera();
         bool grab();
         size_t getImageSize() const;

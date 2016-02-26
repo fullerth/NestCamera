@@ -3,6 +3,7 @@ set(TEST_CAMERA_FACTORY_SOURCES
     testcameraFactory.cxx
     ../../cameraFactory/cameraFactory.cxx
     ../../cameraAdapter/cameraAdapter.cxx
+    ../../imageAdapter/imageAdapter.cxx
 )
 
 add_executable(testcameraFactory ${TEST_CAMERA_FACTORY_SOURCES})
