@@ -20,7 +20,7 @@ namespace testcameraAdapter
     }
 
     // getVideo
-    TEST(cameraAdapter, getVideoMethodCallsConfigBeforeOpen) {
+    TEST(getVideo, callsConfigBeforeOpen) {
         CameraConfig cfg = CameraConfig();
         shared_ptr<raspicam::MockRaspiCam> m(new raspicam::MockRaspiCam);
         ExpectationSet cfg_expects = addConfigureExpectations(m, &cfg);
@@ -32,7 +32,7 @@ namespace testcameraAdapter
     }
 
     // getImage
-    TEST(cameraAdapter, getImageMethodExists) {
+    TEST(getImage, createsCorrectSizeImage) {
         CameraAdapter c = CameraAdapter();
         int expected_size = c.getWidth() * c.getHeight();
         std::shared_ptr<ImageAdapter> img = c.getImage();
@@ -40,15 +40,15 @@ namespace testcameraAdapter
             << " Height: " << c.getHeight();
     }
 
-    // getCamera
-    TEST(cameraAdapter, openCameraCallsOpen) {
+    // openCamera
+    TEST(openCamera, callsRaspiCamOpen) {
         shared_ptr<raspicam::MockRaspiCam> m(new raspicam::MockRaspiCam);
         EXPECT_CALL(*m, open(_)).Times(1);
         CameraAdapter c = CameraAdapter(m);    
         c.openCamera();
     }
 
-    TEST(cameraAdapter, openCameraCorrectlyReturnsValues) {
+    TEST(openCamera, returnsCorrectValues) {
         shared_ptr<raspicam::MockRaspiCam> m(new raspicam::MockRaspiCam);
         EXPECT_CALL(*m, open(_)).WillOnce(Return(true)).WillOnce(Return(false));
         CameraAdapter c = CameraAdapter(m);
@@ -57,7 +57,7 @@ namespace testcameraAdapter
     }
 
     //grab
-    TEST(cameraAdapter, grabCallsParentGrab) {
+    TEST(grab, callsRaspiCamGrab) {
         shared_ptr<raspicam::MockRaspiCam> m(new raspicam::MockRaspiCam);
         EXPECT_CALL(*m, grab()).Times(1);
         CameraAdapter c = CameraAdapter(m);
@@ -65,7 +65,7 @@ namespace testcameraAdapter
     }
 
     //retrieve
-    TEST(cameraAdapter, retrieveCallsParentRetrieve) {
+    TEST(retrieve, callsRaspiCamRetrieve) {
         shared_ptr<raspicam::MockRaspiCam> m(new raspicam::MockRaspiCam);
         EXPECT_CALL(*m, retrieve(_,_)).Times(1);
         CameraAdapter c = CameraAdapter(m);
@@ -74,8 +74,8 @@ namespace testcameraAdapter
         c.retrieve(data);
     }
 
-    //getImageTypeSize
-    TEST(cameraAdapter, getImageSizeCallsParent) {
+    //getImageSize
+    TEST(getImageSize, callsRaspiCamGetImageTypeSize) {
         shared_ptr<raspicam::MockRaspiCam> m(new raspicam::MockRaspiCam);
         EXPECT_CALL(*m, getImageTypeSize(raspicam::RASPICAM_FORMAT_RGB)
                 ).WillOnce(Return(20));
@@ -84,7 +84,7 @@ namespace testcameraAdapter
     }
 
     //getWidth
-    TEST(cameraAdapter, getWidthCallsParent) {
+    TEST(getWidth, callsParent) {
         shared_ptr<raspicam::MockRaspiCam> m(new raspicam::MockRaspiCam);
         EXPECT_CALL(*m, getWidth()).WillOnce(Return(20));
         CameraAdapter c = CameraAdapter(m);
@@ -92,7 +92,7 @@ namespace testcameraAdapter
     }
 
     //getHeight
-    TEST(cameraAdapter, getHeightCallsParent) {
+    TEST(getHeight, callsParent) {
         shared_ptr<raspicam::MockRaspiCam> m(new raspicam::MockRaspiCam);
         EXPECT_CALL(*m, getHeight()).WillOnce(Return(35));
         CameraAdapter c = CameraAdapter(m);
@@ -100,7 +100,7 @@ namespace testcameraAdapter
     }
 
     //configureCamera
-    TEST(cameraAdapter, configureCameraCallsSetters) {
+    TEST(configureCamera, callsSetters) {
         CameraConfig cfg = CameraConfig();
         shared_ptr<raspicam::MockRaspiCam> m(new raspicam::MockRaspiCam);
         addConfigureExpectations(m, &cfg);
