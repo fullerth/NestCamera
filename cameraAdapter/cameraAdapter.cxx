@@ -17,6 +17,7 @@ std::shared_ptr<VideoAdapter> CameraAdapter::getVideo() {
     this->configureCamera(&m_cfg);
     m_cam->open();
     m_cam->grab();
+    return std::shared_ptr<VideoAdapter>(new VideoAdapter());
 
 }
 
@@ -32,7 +33,7 @@ bool CameraAdapter::openCamera() {
 }
 
 bool CameraAdapter::grab() {
-    m_cam->grab();
+    return(m_cam->grab());
 }    
 
 size_t CameraAdapter::getImageSize() const {

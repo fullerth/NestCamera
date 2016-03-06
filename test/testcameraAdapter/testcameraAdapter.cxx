@@ -35,7 +35,7 @@ namespace testcameraAdapter
     // getImage
     TEST(getImage, createsCorrectSizeImage) {
         CameraAdapter c = CameraAdapter();
-        int expected_size = c.getWidth() * c.getHeight();
+        size_t expected_size = c.getWidth() * c.getHeight();
         std::shared_ptr<ImageAdapter> img = c.getImage();
         EXPECT_EQ(expected_size, img->getSize()) << "Width: " << c.getWidth() 
             << " Height: " << c.getHeight();
@@ -75,6 +75,14 @@ namespace testcameraAdapter
         c.grab();
     }
 
+    TEST(grab, returnsCorrectValues) {
+        shared_ptr<raspicam::MockRaspiCam> m(new raspicam::MockRaspiCam);
+        EXPECT_CALL(*m, grab()).WillOnce(Return(true)).WillOnce(Return(false));
+        CameraAdapter c = CameraAdapter(m);
+        EXPECT_TRUE(c.grab());
+        EXPECT_FALSE(c.grab());
+    }
+
     //retrieve
     TEST(retrieve, callsRaspiCamRetrieve) {
         shared_ptr<raspicam::MockRaspiCam> m(new raspicam::MockRaspiCam);
@@ -91,23 +99,25 @@ namespace testcameraAdapter
         EXPECT_CALL(*m, getImageTypeSize(raspicam::RASPICAM_FORMAT_RGB)
                 ).WillOnce(Return(20));
         CameraAdapter c = CameraAdapter(m);
-        EXPECT_EQ(c.getImageSize(), 20);
+        EXPECT_EQ(c.getImageSize(), (size_t)20);
     }
 
     //getWidth
     TEST(getWidth, callsParent) {
         shared_ptr<raspicam::MockRaspiCam> m(new raspicam::MockRaspiCam);
-        EXPECT_CALL(*m, getWidth()).WillOnce(Return(20));
+        unsigned int expected = 35;
+        EXPECT_CALL(*m, getWidth()).WillOnce(Return(expected));
         CameraAdapter c = CameraAdapter(m);
-        EXPECT_EQ(c.getWidth(), 20);
+        EXPECT_EQ(expected, c.getWidth());
     }
 
     //getHeight
     TEST(getHeight, callsParent) {
         shared_ptr<raspicam::MockRaspiCam> m(new raspicam::MockRaspiCam);
-        EXPECT_CALL(*m, getHeight()).WillOnce(Return(35));
+        unsigned int expected = 20;
+        EXPECT_CALL(*m, getHeight()).WillOnce(Return(expected));
         CameraAdapter c = CameraAdapter(m);
-        EXPECT_EQ(c.getHeight(), 35);
+        EXPECT_EQ(expected, c.getHeight());
     }
 
     //configureCamera

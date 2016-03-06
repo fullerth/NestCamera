@@ -20,6 +20,8 @@ find_package(raspicam REQUIRED)
 ## Project Configuration
 add_definitions(-std=c++11)
 add_definitions(-gdwarf-3)
+add_definitions(-Wall)
+add_definitions(-Werror)
 include(CTest)
 
 ## Directories to add to build
